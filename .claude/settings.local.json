@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\alfon\\\\ai\\\\ai-projects\\\\fp_a_tests\\\\budget-demo\\\\assumptions\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\alfon\\\\ai\\\\ai-projects\\\\fp_a_tests\\\\budget-demo\\\\outputs\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\alfon\\\\ai\\\\ai-projects\\\\fp_a_tests\\\\budget-demo\\\\dashboards\")",
+      "mcp__Claude_in_Chrome__tabs_context_mcp"
+    ]
+  }
+}
