@@ -1,0 +1,31 @@
+meta:
+  name: "FY2026 budget"
+  currency: EUR
+  start_month: "2026-01"
+  months: 12
+
+# The base case. Every scenario starts from these numbers
+# and only overrides what is different.
+base:
+  starting_revenue: 200000     # revenue in month 1
+  monthly_growth: 0.04         # 4% month-over-month
+  gross_margin: 0.75           # 75% gross margin
+  opex:
+    salaries: 90000
+    marketing: 25000
+    software: 12000
+    office: 8000
+  starting_cash: 500000
+
+# Scenarios only list what changes vs base. Empty = identical to base.
+scenarios:
+  base: {}
+
+  upside:
+    monthly_growth: 0.06       # grow faster
+    opex:
+      marketing: 40000         # by spending more on marketing
+
+  downside:
+    monthly_growth: 0.015      # slower growth
+    gross_margin: 0.70         # margin compression
