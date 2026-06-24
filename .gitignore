@@ -5,4 +5,5 @@ __pycache__/
 *.token
 snapshots/
 outputs/data/
+**/outputs/*.csv
 # raw ERP/Salesforce pulls stay out of git
