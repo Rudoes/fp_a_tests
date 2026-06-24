@@ -1,0 +1,43 @@
+meta:
+  name: "FY2026 driver-based plan"
+  currency: EUR
+  start_month: "2026-01"
+  months: 12
+
+# ---- Layer 0: sales capacity (leaves) ----
+sales_capacity:
+  starting_reps: 5                 # assumed fully ramped at t0
+  hires_per_month: [0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1]
+  ramp_curve: [0.0, 0.5, 0.85, 1.0]   # productivity by months of tenure (clamps at last)
+  new_opps_per_ramped_rep_per_month: 8
+
+# ---- Layer 1: pipeline funnel (shape + leaf rates) ----
+pipeline:
+  stages: [stage1, stage2, stage3, stage4]   # order; stage4 is the final stage
+  conversion_rates:                           # per transition (the "different win rates")
+    stage1_to_stage2: 0.60
+    stage2_to_stage3: 0.50
+    stage3_to_stage4: 0.55
+    stage4_to_won: 0.30                        # win rate at the final stage
+  stage_lag_months:                            # avg months an opp sits in a stage
+    stage1: 1
+    stage2: 1
+    stage3: 1
+    stage4: 1
+  starting_pipeline:                           # opps already in each stage at t0
+    stage1: 20
+    stage2: 12
+    stage3: 8
+    stage4: 5
+
+# ---- Layer 2/3: revenue mechanics (leaves) ----
+new_business:
+  avg_acv: 60000                # annual contract value per new deal
+  contract_months: 36
+  implementation_fee: 10000
+  implementation_lag_months: 2  # signed -> live
+
+existing_business:
+  active_customers: 40
+  avg_acv: 55000
+  monthly_logo_churn: 0.01
